@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Barbearia Bs - Modelo</title>
+
+<!-- FONTES -->
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<!-- SEUS CSS / MESMO CAMINHO -->
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header>
+  <nav class="nav-container">
+
+ <div class="logo-area">
+  <img src="assets/barber2.png" alt="Logo" class="logo-img">
+  
+  <span class="logo-text">BARBEARIA BS</span>
+</div>
+
+    <!-- Botão de menu (hambúrguer) -->
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#hero">Início</a></li>
+      <li><a href="#sobre">Nossa História</a></li>
+      <li><a href="#servicos">Serviços</a></li>
+      <li><a href="#equipe">Equipe</a></li>
+      <li><a href="#galeria">Galeria</a></li>
+      <li><a href="#promocoes">Promoções</a></li>
+      <li><a href="#depoimentos">Depoimentos</a></li>
+      <li><a href="#agendamento">Agendar</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+
+  </nav>
+</header>
+
+<script>
+function toggleMenu() {
+  const menu = document.getElementById("nav-links");
+  menu.classList.toggle("open");
+}
+</script>
+
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+  <div class="overlay"></div>
+  <img src="assets/logoo.jpg" alt="Barbearia" class="hero-bg">
+  <div class="hero-content">
+    <h1>Quer agendar um horario? <span class="nome-barbearia"></span></h1>
+    <!-- Botão dentro da imagem -->
+    <button class="btn-hero" onclick="abrirAgendamento()">Agendar</button>
+  </div>
+</section>
+
+
+</section>
+
+
+</section>
+
+<style>
+.hero h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 3rem;
+  line-height: 1.3;
+  text-align: center;
+  color: #fff; /* cor padrão branca */
+}
+
+.nome-barbearia {
+  color: #FFD93D; /* amarelo destaque */
+  font-weight: bold;
+}
+
+.estilo-unico {
+  color: #FFD93D; /* amarelo destaque */
+  font-weight: bold;
+}
+
+.experiencia {
+  color: #FFD93D; /* amarelo destaque */
+  font-weight: bold;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+}
+</style>
+
+
+
+
+<!-- ================= SOBRE ================= -->
+ 
+<section id="sobre" class="container">
+  <h2>Nossa História</h2>
+  <p>Fundada com paixão pelo cuidado e estilo, a nossa barbearia nasceu do desejo de oferecer mais do que apenas cortes de cabelo e barba. Desde o início, nosso objetivo foi criar um espaço onde cada cliente se sinta valorizado e exclusivo, unindo tradição e inovação.
+
+Com uma equipe de profissionais experientes, nos dedicamos a aperfeiçoar cada detalhe do atendimento, garantindo resultados impecáveis e um ambiente acolhedor. Aqui, cada corte, cada barba, cada serviço é pensado para realçar a personalidade e confiança de quem passa pela nossa cadeira.</p>
+</section>
+
+<!-- ================= SERVIÇOS ================= -->
+<section id="servicos" class="container">
+  <!-- Banner de serviços como background -->
+  <div class="servicos-banner"></div>
+
+  <!-- Título da seção -->
+  
+
+  <!-- Botão Ver Serviços -->
+  <button class="btn-ver" data-target="servicos-lista">Ver Serviços</button>
+  
+  <!-- Lista de serviços (inicialmente oculta) -->
+  <div id="servicos-lista" class="oculto">
+    <div class="cards-servicos">
+      <div class="card-servico"><h3>Corte Clássico</h3><p>R$60</p></div>
+      <div class="card-servico"><h3>Barba</h3><p>R$40</p></div>
+      <div class="card-servico"><h3>Pacote Premium</h3><p>R$100</p></div>
+      <div class="card-servico"><h3>Navalhado + Hidratação</h3><p>R$85</p></div>
+      <div class="card-servico"><h3>Platinado / Tintura</h3><p>R$120</p></div>
+      <div class="card-servico"><h3>Barba Designer</h3><p>R$50</p></div>
+      <div class="card-servico"><h3>Corte Infantil</h3><p>R$35</p></div>
+      <div class="card-servico"><h3>Hidratação Capilar</h3><p>R$70</p></div>
+      <div class="card-servico"><h3>Alongamento de Barba</h3><p>R$55</p></div>
+      <div class="card-servico"><h3>Pacote Executivo</h3><p>Corte + Barba + Hidratação – R$150</p></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================= GALERIA ================= -->
+<section id="galeria" class="container">
+  <!-- Banner/foto no topo -->
+  <div class="galeria-banner">
+    <img src="assets/top3.jpg" alt="Galeria de Cortes" />
+  </div>
+
+  <!-- Título da seção -->
+
+  <!-- Subtítulo -->
+
+
+  <!-- Botão Ver Galeria -->
+  <button class="btn-ver" data-target="galeria-lista">Ver Galeria</button>
+  
+  <!-- Lista de imagens (inicialmente oculta) -->
+  <div id="galeria-lista" class="oculto">
+    <div class="cards-galeria">
+      <img src="assets/corte1.jpg" alt="Corte 1">
+      <img src="assets/corte2.jpg" alt="Corte 2">
+      <img src="assets/corte3.jpg" alt="Corte 3">
+      <img src="assets/corte4.jpg" alt="Corte 4">
+    </div>
+  </div>
+</section>
+
+<!-- ===========================
+     DEPOIMENTOS
+=========================== -->
+<section id="depoimentos" class="container">
+  <h2>O que nossos clientes dizem</h2>
+  <div class="cards-depoimentos">
+    <div class="card-depoimento">
+      <img src="assets/pessoa1.webp" alt="Lucas M." class="avatar">
+      <p>"A barbearia é impecável! Atendimento personalizado e cortes que superam minhas expectativas. Recomendo muito!"</p>
+      <h4>— Lucas M.</h4>
+    </div>
+    <div class="card-depoimento">
+      <img src="assets/pessoa2.jpg" alt="Felipe A." class="avatar">
+      <p>"Sempre saio satisfeito! O ambiente é elegante e os barbeiros são super profissionais."</p>
+      <h4>— Felipe A.</h4>
+    </div>
+    <div class="card-depoimento">
+      <img src="assets/pessoa3.jpg" alt="Rafael C." class="avatar">
+      <p>"Além do corte, eles cuidam de cada detalhe. Desde o café até a finalização do corte, tudo premium!"</p>
+      <h4>— Rafael C.</h4>
+    </div>
+    <div class="card-depoimento">
+      <img src="assets/pessoa4.jpg" alt="Bruno T." class="avatar">
+      <p>"Atendimento incrível e ambiente sofisticado. É meu ponto de confiança para qualquer ocasião."</p>
+      <h4>— Bruno T.</h4>
+    </div>
+    <div class="card-depoimento">
+      <img src="assets/pessoa5.jpg" alt="Marcos P." class="avatar">
+      <p>"Nunca pensei que um corte pudesse ser tão detalhado. O profissionalismo é de outro nível!"</p>
+      <h4>— Marcos P.</h4>
+    </div>
+    <div class="card-depoimento">
+      <img src="assets/pessoa6.jpg" alt="Ana L." class="avatar">
+      <p>"Minha primeira vez aqui e já me tornei cliente fiel. Serviço excepcional e ambiente top!"</p>
+      <h4>— Ana L.</h4>
+    </div>
+  </div>
+</section>
+
+
+<section id="agendamento" class="container">
+  <h2>Agende seu horário</h2>
+
+  <!-- Input para selecionar a data -->
+  <label for="data">Selecione a data:</label>
+  <input type="date" id="data" name="data" required>
+
+  <!-- Container dos balõezinhos -->
+  <div id="horarios-container"></div>
+
+  <p id="msg"></p>
+</section>
+
+
+<!-- ================= CONTATO ================= -->
+<section id="contato" class="container">
+  <h2>Contatos</h2>
+  <p>WhatsApp: <a href="https://wa.me/5511999999999" target="_blank">+55 11 99999-9999</a></p>
+  <p>Instagram: <a href="https://instagram.com/wowbarber" target="_blank">@wowbarber</a></p>
+  <div id="mapa"><iframe src="https://www.google.com/maps/embed?pb=!1m18..." width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe></div>
+</section>
+
+<!-- ================= MODAIS & ADMIN ================= -->
+<div id="modal-agendamento" class="modal">
+  <div class="modal-content">
+    <span id="close-modal">&times;</span>
+    <h3>Agendar Horário</h3>
+    <form id="form-agendamento">
+      <input type="text" name="nome" placeholder="Nome completo" required>
+      <input type="text" name="telefone" placeholder="Telefone/WhatsApp" required>
+      <select name="servico" required>
+        <option value="">Selecione o serviço</option>
+        <option value="Corte Clássico">Corte Clássico</option>
+        <option value="Barba">Barba</option>
+        <option value="Pacote Premium">Pacote Premium</option>
+        <option value="Navalhado + Hidratação">Navalhado + Hidratação</option>
+        <option value="Platinado / Tintura">Platinado / Tintura</option>
+      </select>
+      <input type="date" name="data" required>
+      <input type="time" name="hora" required>
+      <button type="submit" class="btn-primary">Confirmar</button>
+    </form>
+  </div>
+</div>
+
+<div id="admin-panel" class="modal">
+  <div class="modal-content">
+    <span id="close-admin">&times;</span>
+    <h3>Painel de Administração</h3>
+    <div id="lista-agendamentos"></div>
+    <button id="btn-limpar" class="btn-primary">Limpar Todos</button>
+  </div>
+</div>
+
+<!-- ================= FOOTER ================= -->
+<footer id="footer">
+  <p>&copy; WowBarber 2025</p>
+</footer>
+
+<!-- Botão WhatsApp flutuante -->
+<a href="https://wa.me/5511999999999" target="_blank" class="whatsapp-btn">💬</a>
+
+<script src="script.js"></script>
+</body>
+</html>
