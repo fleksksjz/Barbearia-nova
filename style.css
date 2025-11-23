@@ -33,7 +33,7 @@ header {
     width: 100%;
     top: 0;
     left: 0;
-    background: rgba(10,10,10,0.95);
+    background: rgba(10,10,10,0.98);
     padding: 20px 0;
     border-bottom: 2px solid #f5c518;
     z-index: 100;
@@ -86,81 +86,79 @@ header {
     border: none;
     color: white;
     cursor: pointer;
+    z-index: 101;
 }
 
 /* =========================== HERO =========================== */
 .hero {
-  position: relative;
-  height: 100vh;
-  width: 100%;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .hero-bg {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: none; /* remove o blur e o escurecimento */
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
 }
-
-
-
 .hero-content {
-  position: absolute;  /* importante para posicionar sobre a imagem */
-  bottom: 40px;        /* distância da parte inferior do hero */
-  left: 50%;           /* centraliza horizontalmente */
-  transform: translateX(-50%);
-  text-align: center;
-  z-index: 3;
+    position: absolute;  
+    bottom: 80px;        
+    left: 50%;           
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 3;
+    width: 90%;
+    max-width: 800px;
 }
 
 .hero-content h1 {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 3rem;
-  line-height: 1.3;
-  color: #fff;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3rem;
+    line-height: 1.3;
+    color: #fff;
+    margin-bottom: 20px;
 }
 
 .nome-barbearia {
-  color: #FFD93D;
-  font-weight: bold;
+    color: #FFD93D;
+    font-weight: bold;
+}
+
+.hero-logo {
+    width: 200px;
+    max-width: 80%;
+    height: auto;
+    display: block;
+    margin: 0 auto 20px;
 }
 
 .btn-hero {
-  display: inline-block;
-  margin-top: 15px;
-  padding: 15px 30px;
-  background-color: #FFD000;
-  color: #000;
-  font-weight: 600;
-  border-radius: 8px;
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
+    display: inline-block;
+    background: #FFD000;
+    color: #000;
+    padding: 15px 40px;
+    border-radius: 10px;
+    font-size: 1.3rem;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-height: 48px;
 }
 
 .btn-hero:hover {
-  background-color: #e6c200;
-  transform: translateY(-3px);
+    background-color: #e6c200;
+    transform: translateY(-3px);
 }
-
-/* Responsividade */
-@media(max-width:768px){
-  .hero-content h1 {
-    font-size: 2rem;
-  }
-  .btn-hero {
-    padding: 12px 25px;
-    font-size: 1rem;
-  }
-}
-
 
 /* =========================== CARDS =========================== */
 .cards-servicos, .cards-galeria, .cards-equipe, .cards-promocoes, .cards-depoimentos {
@@ -201,7 +199,7 @@ header {
     font-weight: 700;
 }
 .card-servico:hover {
-    transform: translateY(-15px) rotateX(5deg) scale(1.08);
+    transform: translateY(-15px) scale(1.05);
     box-shadow: 0 0 30px #f5c518, 0 15px 30px rgba(0,0,0,0.5);
 }
 
@@ -220,7 +218,7 @@ header {
     transition: all 0.5s ease;
 }
 .card-equipe:hover img {
-    transform: scale(1.2) rotate(5deg);
+    transform: scale(1.15);
 }
 .card-equipe h3 {
     color: #f5c518;
@@ -245,6 +243,32 @@ header {
 .cards-galeria img:hover {
     transform: scale(1.05);
     box-shadow: 0 0 20px #f5c518;
+}
+
+/* =========================== AGENDAMENTO =========================== */
+#agendamento {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#agendamento label {
+    display: block;
+    font-size: 1.1rem;
+    color: #FFD93D;
+    margin: 20px 0 10px;
+    font-weight: 600;
+}
+
+#agendamento input[type="date"] {
+    width: 100%;
+    max-width: 300px;
+    padding: 12px;
+    border: 2px solid #f5c518;
+    border-radius: 8px;
+    background: #1a1a1a;
+    color: #fff;
+    font-size: 16px;
+    margin-bottom: 20px;
 }
 
 /* =========================== DEPOIMENTOS =========================== */
@@ -272,7 +296,7 @@ header {
     transform: scale(1.15);
 }
 .card-depoimento:hover {
-    transform: translateY(-10px) scale(1.05);
+    transform: translateY(-10px) scale(1.03);
     box-shadow: 0 10px 35px rgba(245,197,24,0.6);
 }
 .card-depoimento p {
@@ -301,11 +325,21 @@ header {
     border-radius: 12px;
     margin: 20px 0;
     box-shadow: 0 5px 15px rgba(245,197,24,0.4);
+    border: none;
+    min-height: 48px;
 }
 .btn-ver:hover {
     background: #e6c200;
     transform: translateY(-2px) scale(1.05);
     box-shadow: 0 8px 25px rgba(245,197,24,0.6);
+}
+
+.btn-ver.active {
+    background: #e6c200;
+}
+
+.btn-ver.active::after {
+    content: " ▲";
 }
 
 /* =========================== MODAIS =========================== */
@@ -337,6 +371,51 @@ header {
     font-size:26px;
     cursor:pointer;
     color:#f5c518;
+}
+
+.modal-content input,
+.modal-content select {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 2px solid #f5c518;
+    border-radius: 8px;
+    background: #1a1a1a;
+    color: #fff;
+    font-size: 16px;
+}
+
+.modal-content button {
+    width: 100%;
+    padding: 15px;
+    background: #FFD93D;
+    color: #000;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: all 0.3s ease;
+}
+
+.modal-content button:hover {
+    background: #e6c200;
+    transform: translateY(-2px);
+}
+
+#lista-agendamentos {
+    max-height: 400px;
+    overflow-y: auto;
+    margin: 20px 0;
+}
+
+#btn-limpar {
+    background: #e74c3c !important;
+}
+
+#btn-limpar:hover {
+    background: #c0392b !important;
 }
 
 /* =========================== FOOTER =========================== */
@@ -371,26 +450,8 @@ footer p:hover {
     transition:all 0.3s;
 }
 .whatsapp-btn:hover {
-    transform:scale(1.2) rotate(-10deg);
+    transform:scale(1.2);
     box-shadow:0 8px 20px rgba(0,0,0,0.4);
-}
-
-/* =========================== RESPONSIVO =========================== */
-@media(max-width:768px) {
-    .menu-toggle { display:block; }
-    .nav-links {
-        flex-direction: column;
-        background: rgba(0,0,0,0.95);
-        position: absolute;
-        top:70px; right:0;
-        width:100%;
-        display: none;
-    }
-    .nav-links li { margin: 15px 0; }
-    .cards-servicos,.cards-equipe,.cards-galeria,.cards-promocoes,.cards-depoimentos {
-        flex-direction: column;
-        align-items: center;
-    }
 }
 
 /* =========================== BANNERS =========================== */
@@ -405,14 +466,30 @@ footer p:hover {
     margin-bottom: 20px;
     transition: all 0.3s ease;
 }
-.servicos-banner img {
+
+.galeria-banner {
+    width: 100%;
+    height: 400px;
+    background-image: url('assets/top3.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.galeria-banner img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 20px;
     transition: transform 0.5s ease;
 }
-.servicos-banner img:hover { transform: scale(1.05); }
-@media(max-width:768px){ .servicos-banner{ height:250px; } }
+
+.galeria-banner img:hover {
+    transform: scale(1.05);
+}
 
 /* =========================== TITULOS GRANDES =========================== */
 #servicos h2, #galeria h2 {
@@ -429,58 +506,15 @@ footer p:hover {
     line-height: 2;
     color: #fff;
 }
-/* =========================== GALERIA =========================== */
-#galeria-lista {
-    display: none; /* Fica oculto por padrão */
+
+/* =========================== GALERIA E SERVIÇOS TOGGLE =========================== */
+#galeria-lista, #servicos-lista {
+    display: none;
     margin-top: 30px;
 }
 
-#galeria-lista.active {
-    display: grid; /* Abre apenas quando ativado */
-    grid-template-columns: 1fr;
-    gap: 15px;
-    padding: 10px 0;
-}
-
-.cards-galeria {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-}
-
-.cards-galeria img {
-    width: 100%;
-    max-width: 250px;
-    height: 250px;
-    object-fit: cover;
-    border-radius: 15px;
-    transition: all 0.5s;
-    cursor: pointer;
-}
-
-.cards-galeria img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 20px #f5c518;
-}
-
-/* =========================== SERVIÇOS =========================== */
-#servicos-lista {
-    display: none; /* Fica oculto por padrão */
-    margin-top: 30px;
-}
-
-#servicos-lista.active {
-    display: grid; /* Abre apenas quando ativado */
-    grid-template-columns: 1fr;
-    gap: 15px;
-    padding: 10px 0;
-}
-
-#servicos-lista .card-servico {
-    width: 100%;
-    max-width: 220px;
-    margin: 0 auto;
+#galeria-lista.active, #servicos-lista.active {
+    display: block;
 }
 
 /* =========================== HORÁRIOS / BALÕES =========================== */
@@ -490,64 +524,330 @@ footer p:hover {
     border: 2px solid #f5c518;
     border-radius: 12px;
     color: #fff;
-    padding: 10px 20px;
+    padding: 12px 20px;
     margin: 5px;
     cursor: pointer;
     font-weight: bold;
     transition: all 0.3s ease;
+    min-height: 44px;
+    font-size: 0.95rem;
+    min-width: 90px;
+    text-align: center;
 }
 .balaozinho:hover {
     background: #f5c518;
     color: #0a0a0a;
+    transform: translateY(-2px);
 }
 .balaozinho.ocupado {
-    background: #555;
-    border-color: #888;
-    color: #ccc;
+    background: #333;
+    border-color: #555;
+    color: #888;
     cursor: not-allowed;
+    opacity: 0.5;
 }
 .balaozinho.ativo {
-    background: #fff;
+    background: #FFD93D;
     color: #0a0a0a;
-    border-color: #fff;
+    border-color: #FFD93D;
+    box-shadow: 0 0 15px rgba(255, 217, 61, 0.5);
 }
 
-.galeria-banner {
-    width: 100%;
-    height: 400px; /* altura desktop */
-    background-image: url('assets/top3.jpg'); /* sua imagem */
-    background-size: cover;      /* cobre o container */
-    background-position: center; /* centraliza a imagem */
-    background-repeat: no-repeat;
-    border-radius: 20px;
-    margin-bottom: 20px;
-    transition: all 0.3s ease;
+#horarios-container {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    max-width: 500px;
+    margin: 20px auto;
 }
 
-.galeria-banner img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;          /* mantém proporção preenchendo */
-    border-radius: 20px;
-    transition: transform 0.5s ease;
+#msg {
+    margin-top: 20px;
+    padding: 15px;
+    background: #1a1a1a;
+    border: 2px solid #f5c518;
+    border-radius: 8px;
+    color: #FFD93D;
+    font-weight: 600;
+    font-size: 1.1rem;
+    display: none;
 }
 
-.galeria-banner img:hover {
-    transform: scale(1.05);    /* zoom suave */
+#msg.show {
+    display: block;
 }
 
-/* Responsivo */
-@media(max-width:768px){
-    .galeria-banner{
-        height: 250px;          /* altura menor no celular */
+/* =========================== RESPONSIVO MOBILE =========================== */
+@media(max-width:768px) {
+    /* Container */
+    .container {
+        padding: 30px 15px;
+    }
+
+    /* Menu Mobile */
+    .menu-toggle { 
+        display: block;
+    }
+    
+    .nav-links {
+        flex-direction: column;
+        background: rgba(0,0,0,0.98);
+        position: absolute;
+        top: 80px;
+        right: 0;
+        width: 100%;
+        display: none;
+        padding: 20px 0;
+        border-top: 2px solid #f5c518;
+    }
+    
+    .nav-links.open {
+        display: flex !important;
+        animation: slideDown 0.3s ease;
+    }
+    
+    .nav-links li { 
+        margin: 20px 0;
+        padding: 10px;
+    }
+    
+    .nav-links li a {
+        font-size: 1.1rem;
+        padding: 10px 15px;
+        display: block;
+    }
+
+    /* Hero */
+    .hero {
+        height: 70vh;
+        min-height: 500px;
+        max-height: 650px;
+    }
+
+    .hero-bg {
+        object-fit: contain;
+        object-position: center top;
+        width: 100%;
+        height: 100%;
+        background: #0a0a0a;
+    }
+
+    .hero-content {
+        bottom: 40px;
+        padding: 0 20px;
+        width: 90%;
+    }
+
+    .hero-content h1 {
+        font-size: 1.6rem;
+        line-height: 1.2;
+        margin-bottom: 15px;
+    }
+
+    .hero-logo {
+        width: 100px;
+        margin-bottom: 10px;
+    }
+
+    .btn-hero {
+        padding: 12px 28px;
+        font-size: 1rem;
+    }
+
+    /* Títulos */
+    #servicos h2, #galeria h2 {
+        font-size: 2.5rem;
+    }
+
+    #servicos p, #galeria p {
+        font-size: 1.1rem;
+        line-height: 1.6;
+    }
+
+    #sobre p {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    /* Cards */
+    .card-servico, .card-equipe {
+        width: 90%;
+        max-width: 280px;
+        padding: 20px 15px;
+        margin: 0 auto;
+    }
+
+    .card-servico h3 {
+        font-size: 1.1rem;
+    }
+
+    .card-servico p {
+        font-size: 0.95rem;
+    }
+
+    .card-depoimento {
+        width: 90%;
+        max-width: 300px;
+        padding: 20px;
+        min-height: 150px;
+    }
+
+    .card-depoimento p {
+        font-size: 0.85rem;
+    }
+
+    /* Simplificar hover no mobile */
+    .card-servico:hover,
+    .card-equipe:hover {
+        transform: translateY(-5px) scale(1.02);
+    }
+
+    .card-servico {
+        box-shadow: 0 3px 10px rgba(245,197,24,0.2);
+    }
+
+    /* Galeria */
+    .cards-galeria {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        padding: 0 10px;
+    }
+
+    .cards-galeria img {
+        width: 100%;
+        height: 150px;
+        max-width: 100%;
+    }
+
+    /* Agendamento */
+    #agendamento input[type="date"] {
+        width: 90%;
+        max-width: 100%;
+    }
+
+    #horarios-container {
+        gap: 8px;
+        padding: 0 10px;
+    }
+
+    .balaozinho {
+        padding: 10px 15px;
+        font-size: 0.9rem;
+        min-width: 80px;
+    }
+
+    #msg {
+        font-size: 1rem;
+        margin: 15px 10px;
+    }
+
+    /* Banners */
+    .servicos-banner,
+    .galeria-banner {
+        height: 250px;
+    }
+
+    /* Botões */
+    .btn-ver {
+        padding: 16px 35px;
+        font-size: 1.1rem;
+        width: 90%;
+        max-width: 300px;
+    }
+
+    /* Modal */
+    .modal-content {
+        width: 95%;
+        padding: 25px 20px;
+        margin: 20px;
+    }
+
+    /* WhatsApp */
+    .whatsapp-btn {
+        bottom: 20px;
+        right: 20px;
+        font-size: 1.5rem;
+        padding: 12px;
+    }
+
+    /* Cards em coluna */
+    .cards-servicos,
+    .cards-equipe,
+    .cards-galeria,
+    .cards-promocoes,
+    .cards-depoimentos {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    /* Layout em grid 2 colunas para serviços no mobile */
+    .cards-servicos {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        padding: 0 10px;
+    }
+
+    .cards-servicos .card-servico {
+        width: 100%;
+        max-width: 100%;
     }
 }
 
-.hero-logo {
-  position: relative;       /* ou absolute se quiser flutuar */
-  z-index: 4;               /* maior que overlay e texto */
-  width: 2000px;             /* ajuste do tamanho */
-  height: auto;
-  display: block;
-  margin: 0 auto 20px;      /* centraliza horizontalmente */
+/* botão dos depoimentos (estilo principal igual ao seu btn-hero/btn-ver) */
+.btn-depoimento {
+  margin-top: 12px;
+  padding: 12px 22px;
+  border: none;
+  border-radius: 8px;
+  background: #FFD93D;
+  color: #000;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform .2s ease, background .2s ease;
+}
+.btn-depoimento:hover {
+  transform: translateY(-3px);
+  background: #e6c200;
+}
+
+/* Ajustes nos cards de depoimento (garante alinhamento com imagem + botão) */
+.card-depoimento {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 22px;
+  background: linear-gradient(145deg, #111, #1c1c1c);
+  border: 2px solid #222;
+  border-radius: 16px;
+  width: 280px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+.card-depoimento .avatar {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #f5c518;
+}
+
+/* Modal específico (uso das classes já existentes modal/modal-content) */
+.modal-depo-content {
+  max-width: 520px;
+  text-align: center;
+  border: 2px solid #f5c518;
+  padding: 30px;
+}
+#modal-depoimento .depo-inner p {
+  margin: 0;
+}
+@media(max-width:768px){
+  .card-depoimento { width: 90%; max-width: 420px; }
+  .modal-depo-content { width: 95%; padding: 20px; }
+  #depo-img { width: 110px; height: 110px; }
 }
